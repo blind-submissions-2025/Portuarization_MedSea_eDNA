@@ -31,29 +31,13 @@ pkgs <- c("phyloseq","ggplot2","dplyr","vegan","tidyr",
 lapply(pkgs, require,character.only=TRUE)
 
 # color palettes ---------------------------------------------------------------
-c25<-get(load("C:/Users/Ginevra Lilli/Dropbox/Postdoc_CEAB/MarEEE-Med/Analyses/colors_barplot25.Rdata")) #load 25 colors palette for barplot 
-new.pal<-c(
-  "#E69F00",  # orange
-  "#56B4E9",  # sky blue
-  "#009E73",  # bluish green
-  "#F0E442",  # yellow
-  "#0072B2",  # blue
-  "#D55E00",  # vermillion
-  "#CC79A7",  # reddish purple
-  "#999999",  # grey
-  "#117733",  # dark green
-  "#332288",  # dark blue
-  "#88CCEE",  # light blue
-  "#44AA99",  # turquoise
-  "#DDCC77",  # sand
-  "#AA4499",  # purple-pink
-  "#882255",  # wine red
-  "#661100",  # brown
-  "#6699CC",  # soft blue
-  "#888888",  # mid grey
-  "#F1A340",  # tan-orange
-  "#998EC3")   # muted purple)
-
+c25<-c("dodgerblue2",   "#E31A1C" ,      "green4",        "#6A3D9A",      
+"#FF7F00"     ,  "black"  ,       "gold1" ,        "skyblue2",     
+"#FB9A99"      , "palegreen2",    "#CAB2D6",       "#FDBF6F",      
+"gray70"        ,"khaki2",        "maroon",        "orchid1",      
+"deeppink1"     ,"blue1",         "steelblue4",    "darkturquoise",
+"green1"        ,"yellow4",       "yellow3",       "darkorange4",  
+"brown" )
 # general estetics of plots
 fig <-theme(strip.background = element_blank(), strip.text.y = element_text(size=16)) +
   theme(legend.background = element_blank()) +
@@ -74,7 +58,7 @@ fig <-theme(strip.background = element_blank(), strip.text.y = element_text(size
 get(load("ps_538_species_summer2021.RData"))
 
 # Load the species occurrence table 
-traits.ninis.df<-read.csv2("C:/Users/Ginevra Lilli/Dropbox/Postdoc_CEAB/MarEEE-Med/Writing/Article/Manuscrip_MarEEEMed/MS_Reviewed/Final_to_coauthors/Species_occurrence_table_Watersipora_check.csv")
+traits.ninis.df<-read.csv2("Species_occurrence_table.csv")
 
 # Generate full community (COMM=NIS + LOCAL), RESS species (RESS) and non-indigenous species (NIS) objects
 
@@ -3083,4 +3067,5 @@ NIS_pcoa.plot.centroids<-ggplot(data=sites_PCoA.NIS, aes(Axis.1, Axis.2, color=T
   scale_color_manual(values = c("darkblue","yellow3"))+ 
   labs(title = paste0(" PCoA - NIS"))
                                                           fill=Type_habitat_broad),alpha=0.0)
+
 
