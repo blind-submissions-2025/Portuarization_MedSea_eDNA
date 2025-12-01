@@ -8,4 +8,4 @@ Files and codes used to generate the results reported in the manuscript "_Expand
 
 **Species_occurrence_table.csv**: Table including the 538 species retrieved by combining the trhee OTUs tables and keeping only OTUs assigned down to the Species level. Each species is characterised for its functionality (motility and habitat) and its status as NIS or Resident in the Mediterranean Sea.
 
-**ps_38_species_summer2021.R** : phyloseq object used in the analyses, including taxonomic table, species table with presence and absence and metadata; it is possible to download this and run it in the "Diversity_analyses.R" script.
+**ps_538_species_summer2021.R** : phyloseq object used in the analyses, including taxonomic table, species table with presence and absence and metadata; it is possible to download this and run it in the "Diversity_analyses.R" script.
