@@ -273,7 +273,7 @@ sample.per.loc$combined<-paste0(sample.per.loc$Locality,"_",sample.per.loc$Type_
 otu<-as.data.frame(otu_table(NIS))
 
 
-otu.pooled<-as.data.frame(matrix(nrow=43,ncol=24))
+otu.pooled<-as.data.frame(matrix(nrow=41,ncol=24))
 colnames(otu.pooled)[1:12]<-paste0(unique(metaNIS$Locality),"_Natural")
 colnames(otu.pooled)[13:24]<-paste0(unique(metaNIS$Locality),"_Artificial")
 rownames(otu.pooled)<-taxa_names(NIS)
@@ -2821,7 +2821,7 @@ NIS_homogen.plot<-ggplot(dispr.NIS.dist, aes(x=Type_habitat_broad,y=Jaccard_dist
 
 site.list<-metaNIS%>% group_by(Locality) %>% summarise(sites=as.vector(sample_name))
 
-replicates.final<-data.frame(matrix(NA, nrow = 43, ncol = 0))
+replicates.final<-data.frame(matrix(NA, nrow = 41, ncol = 0))
 
 for (locality in unique(site.list$Locality)) {
   
@@ -2953,8 +2953,8 @@ heatmap
 NIS.tax<-as.data.frame(tax_table(NIS))
 
 
-NIS.tax %>% group_by(Trait1)%>% summarise(freq=(n()*100)/42)
-NIS.tax %>% group_by(Trait1_3rd_lev_fish)%>% summarise(freq=(n()*100)/42)
+NIS.tax %>% group_by(Trait1)%>% summarise(freq=(n()*100)/41)
+NIS.tax %>% group_by(Trait1_3rd_lev_fish)%>% summarise(freq=(n()*100)/41)
 
 
 NIS.tax.trait2<-subset(NIS.tax, !Class_Worms_Accepted %in% c("Teleostei",
@@ -2963,7 +2963,7 @@ NIS.tax.trait2<-subset(NIS.tax, !Class_Worms_Accepted %in% c("Teleostei",
 NIS.tax.trait2 %>% group_by(Trait2_Worms)%>% summarise(freq=(n()*100)/40)
 
 
-NIS.tax %>% group_by(Trait4_larvae)%>% summarise(freq=(n()*100)/42)
+NIS.tax %>% group_by(Trait4_larvae)%>% summarise(freq=(n()*100)/41)
 
 
 ### p. Traits do not account for different compositin of NIS inside and outside ports ----
@@ -3094,4 +3094,5 @@ NIS_pcoa.plot.centroids<-ggplot(data=sites_PCoA.NIS, aes(Axis.1, Axis.2, color=T
   scale_color_manual(values = c("darkblue","yellow3"))+ 
   labs(title = paste0(" PCoA - NIS"))
                                                           fill=Type_habitat_broad),alpha=0.0)
+
 
