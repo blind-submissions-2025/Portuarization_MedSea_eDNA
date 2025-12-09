@@ -19,7 +19,7 @@
 
 
 
-# Author: Ginevra Lilli 
+# Author: 
 
 # Load libraries -----------------------------------------------------------------
 pkgs <- c("phyloseq","ggplot2","dplyr","vegan","tidyr",
@@ -80,11 +80,11 @@ fig <-theme(strip.background = element_blank(), strip.text.y = element_text(size
 
 # combined_taxa_ps_summer.sp<-readRDS("ps_538_species_summer2021.RData")
 
-combined_taxa_ps_summer.sp<-readRDS("ps_538_species_summer2021_Watersipora_Phallusia_Bugolina_Himeniacidon_checks.RData")
+combined_taxa_ps_summer.sp<-readRDS("ps_538_species_summer2021.RData")
 
 # Load the Species occurrence table 
 
-traits.ninis.df<-readxl::read_excel("C:/Users/Ginevra Lilli/Dropbox/Postdoc_CEAB/MarEEE-Med/Writing/Article/Manuscrip_MarEEEMed/MS_Reviewed/Final_to_Ecography/Final/reviewed/Ecography/Species_occurrence_table.xlsx")
+traits.ninis.df<-readxl::read_excel("Species_occurrence_table.xlsx")
 
 # Generate full community (COMM=NIS + LOCAL), RESS species (RESS) and non-indigenous species (NIS) objects
 
@@ -3090,3 +3090,4 @@ NIS_pcoa.plot<-plot_ordination(NIS, NIS_PCoA, color= "Type_habitat_broad")+
   ggConvexHull:: geom_convexhull(data=sites_PCoA.NIS,aes(x = Axis.1, y = Axis.2, color=Type_habitat_broad,
                                                      fill=Type_habitat_broad),alpha=0.0)+
 fig
+
