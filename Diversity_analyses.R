@@ -19,7 +19,7 @@
 
 
 
-# Author: Ginevra Lilli 
+# Author:  
 
 # Load libraries -----------------------------------------------------------------
 pkgs <- c("phyloseq","ggplot2","dplyr","vegan","tidyr",
@@ -82,7 +82,7 @@ combined_taxa_ps_summer.sp<-readRDS("ps_538_species_summer2021.RData")
 
 # Load the Species occurrence table 
 
-traits.ninis.df<-read_excel("C:/Users/Ginevra Lilli/Dropbox/Postdoc_CEAB/MarEEE-Med/Writing/Article/Manuscrip_MarEEEMed/MS_Reviewed/Final_to_Ecography/Final/reviewed/Ecography/Species_occurrence_table.xlsx")
+traits.ninis.df<-read_excel("Species_occurrence_table.xlsx")
 
 # Generate full community (COMM=NIS + LOCAL), RESS species (RESS) and non-indigenous species (NIS) objects
 
@@ -3094,5 +3094,6 @@ NIS_pcoa.plot.centroids<-ggplot(data=sites_PCoA.NIS, aes(Axis.1, Axis.2, color=T
   scale_color_manual(values = c("darkblue","yellow3"))+ 
   labs(title = paste0(" PCoA - NIS"))
                                                           fill=Type_habitat_broad),alpha=0.0)
+
 
 
