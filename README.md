@@ -1,4 +1,4 @@
-Files and codes used to generate the results reported in the manuscript "_Expanding on the portuarization syndrome from an ecological perspective: eDNA reveals rich diversity, non-indigenous hotspots, and biotic homogenization in ports_" by Lilli et al.,.
+Files and codes used to generate the results reported in the manuscript "_Expanding on the portuarization syndrome from an ecological perspective: eDNA reveals rich diversity, non-indigenous hotspots, and biotic homogenization in ports_" 
 
 **Diversity_analyses.R** : R script reporting all the statistical analyses performed in the study, as well as the script to generate plots reported in the main text and in the supplementary material
 
