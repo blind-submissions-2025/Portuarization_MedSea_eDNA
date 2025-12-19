@@ -1,12 +1,10 @@
 # Diversity analyses (Alpha and Beta) as reported in the article "Expanding on 
-# the portuarization syndrome from an ecological perspective: eDNA reveals rich diversity, 
-# non-indigenous hotspots, and biotic homogenization in ports"
+# the portuarization syndrome from an ecological perspective using environmental DNA"
 # The phyloseq object called in this script has been obtained by the combination 
 # of the OTU and TAXA generated for three different markers 12S,18S, 
-# COI accoridng to the "Preparation table script"
+# COI accoridng to the "Preparation_combined_table" script
 # Additional filtering for organisms classified only at species level and for samples 
 # collected only during summer 2021 has been done.
-
 
 # The analyses performed are organized as follow:
 
@@ -18,8 +16,6 @@
 # 5) section g-p: diversity analyses on NIS community
 
 
-
-# Author: 
 
 # Load libraries -----------------------------------------------------------------
 pkgs <- c("phyloseq","ggplot2","dplyr","vegan","tidyr",
@@ -3090,4 +3086,5 @@ NIS_pcoa.plot<-plot_ordination(NIS, NIS_PCoA, color= "Type_habitat_broad")+
   ggConvexHull:: geom_convexhull(data=sites_PCoA.NIS,aes(x = Axis.1, y = Axis.2, color=Type_habitat_broad,
                                                      fill=Type_habitat_broad),alpha=0.0)+
 fig
+
 
