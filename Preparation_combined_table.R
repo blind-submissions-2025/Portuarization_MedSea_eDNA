@@ -1,3 +1,11 @@
+# Processing of the OTUs tables generated for each marker (12S, 18S, COI) to:
+# 1) Rarefying each OTU table to the minimum numeber of reads
+# 2) Selecting only OTU assigned to Animalia
+# 3) Remove all non-marine organisms
+# 4) Create the non-redundant combined taxonomic dataset: joining the three filtered and rarefied OTU table into a final taxonomic table.
+# 5) Subset the dataset, keeping only taxa classified down to species level
+
+
 # Load libraries 
 pkgs <- c("phyloseq","dplyr","tidyr","broom","worrms","tibble","readxl","stringr")
 lapply(pkgs, require,character.only=TRUE)
@@ -104,7 +112,7 @@ phyla_list_combined <- unique(
   }))
 )
 
-# Rarefaction ----
+# CHUNK 1: Rarefaction ----
 # Function to rarefy phyloseq objects to 100000 reads unless the minimum number of reads is higher 
 rarefy_per_marker <- function(phyloseq_list) {
   lapply(phyloseq_list, function(ps) {
@@ -231,7 +239,7 @@ otu_counts <- count_asvs(otu_phyloseq_objects_summer, rarefied_otu_summer_object
 cat("\nOTU Counts Before and After Rarefaction:\n")
 print(otu_counts)
 
-## Explore then prepare Animalia data ----
+## CHUNK 2: Explore then prepare Animalia data ----
 
 # Obtain all phyla in the taxonomy tables of the rarefied objects
 
@@ -340,7 +348,7 @@ dim(tax_table(rare_otu_phyloseq_objects.animalia$`12S`))[1] # 562
 dim(tax_table(rare_otu_phyloseq_objects.animalia$`18S`))[1] # 376
 dim(tax_table(rare_otu_phyloseq_objects.animalia$`COI`))[1] # 422
 
-# Remove non marine Insecta, Mammalia and Birds ----
+# CHUNK 3: Remove non marine Insecta, Mammalia and Birds ----
 # Function to recognize non marine taxa in general, with a special focus on Insecta and Mammalia for this dataset
 
 marine.org <- function(ps, organism, taxlevel) {
@@ -521,7 +529,7 @@ cat("Mammalia, INsect, arachnida and Birds left in the Dataset")
 
 print(list.kept.otu)
 
-# Creating combined markers Table ----
+# CHUNK 4: Creating combined markers Table ----
 # 1- fusion of identical taxonomy  2-discarding duplicates PER SITE
 
 #################### OBJECTIVES
@@ -1183,7 +1191,7 @@ combined_taxa_phyloseq_WormsAcc<-phyloseq(otu_table(otu_table(combined_taxa_phyl
                                           sample_data(sample_data(combined_taxa_phyloseq)))
 
 
-# Select only summer samples
+#  CHUNK 5: Select only summer samples
 
 combined_taxa_ps_summer<-subset_samples(combined_taxa_phyloseq_WormsAcc, Season %in% "Summer")
 # #
@@ -1197,3 +1205,4 @@ combined_taxa_ps_summer.sp<-prune_taxa(as.data.frame(tax_table(combined_taxa_ps_
 
 # Final Taxonomiy table at species level 
 ps_538_species_summer2021<-combined_taxa_ps_summer.sp
+
