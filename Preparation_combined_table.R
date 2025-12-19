@@ -11,7 +11,7 @@ pkgs <- c("phyloseq","dplyr","tidyr","broom","worrms","tibble","readxl","stringr
 lapply(pkgs, require,character.only=TRUE)
 
 # Load OTU tables
-data<-load("C:/Users/Ginevra Lilli/Dropbox/Postdoc_CEAB/MarEEE-Med/Analyses/med_int_ext_allBLAST.RData")
+data<-load("med_int_ext_allBLAST.RData")
 names(otu_phyloseq_objects) <- c("12S", "18S", "COI")
 
 # Function to rename taxa in a phyloseq object
@@ -630,7 +630,7 @@ combined_data <- combined_data %>%
   mutate(OTU = paste0(Marker, "_", OTU))
 
 
-###### Validate the taxonomical assignation of FARTA with WormS - Fred's script 
+###### Validate the taxonomical assignation of FARTA with WormS  
 
 # Check that the column exist
 if (!"FARTA" %in% colnames(combined_data)) {
@@ -1205,4 +1205,5 @@ combined_taxa_ps_summer.sp<-prune_taxa(as.data.frame(tax_table(combined_taxa_ps_
 
 # Final Taxonomiy table at species level 
 ps_538_species_summer2021<-combined_taxa_ps_summer.sp
+
 
