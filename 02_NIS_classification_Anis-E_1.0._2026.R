@@ -29,7 +29,7 @@ library(dplyr)
 ## Label NIS from the ps object
 
 # Import completed dataset 
-combined_taxa_ps_summer.sp<-readRDS("ps_538_species_summer2021.RData")
+combined_taxa_ps_summer.sp<-readRDS("ps_536_species.RData")
 
 ## Extract taxa table
 
@@ -430,4 +430,4 @@ combined_taxa_ps_summer.sp.nociona.mytilus<-subset_taxa(combined_taxa_ps_summer.
 # Import in the phyloseq object
 tax_table(combined_taxa_ps_summer.sp)<-as.matrix(new.class.tax)
 
-saveRDS(combined_taxa_ps_summer.sp,"~ps_536_species_summer2021_new_NIS_classification_ANISE1.1.RData")
+saveRDS(combined_taxa_ps_summer.sp,"~ps_536_species.RData")
