@@ -1,9 +1,9 @@
-# Diversity analyses (Alpha and Beta) and Funcitonal traits analyses as reported in the article "An ecological perspective on the portuarization syndrome: 
-# eDNA reveals species-rich communities, non-indigenous species hotspots, and biotic homogenization in ports"
+# Diversity analyses (Alpha and Beta) and Funcitonal traits analyses as reported in the article "High species richness, non-indigenous species
+# hotspots, and biotic homogenization provide ecological support for the portuarization syndrome"
 
 # The phyloseq object called in this script has been obtained by the combination 
 # of the OTU and TAXA generated for three different markers 12S,18S, 
-# COI accoridng to the "Preparation table script" also present in the github repository
+# COI according to the "Preparation table script" also present in the github repository
 
 # The analyses performed are organized as follow:
 
