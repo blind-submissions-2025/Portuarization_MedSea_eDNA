@@ -1,8 +1,14 @@
 Files and codes used to generate the results reported in the manuscript "_An ecological perspective on the portuarization syndrome: eDNA reveals species-rich communities, non-indigenous species hotspots, and biotic homogenization in ports_" 
 
-**Preparation_combined_table.R**: R script used to: i) filter the OTU tables form each marker (12S,18S,COI) from OTUs not assigned to marine Metazoan, ii) rarefy to the minimum number of reads per sample, iii) combine the OTUs tables of the three markers (12S,18S,COI) into one non-redundant taxonomic dataset, iv) remove all OTUs not assigned down to species level.
+**01_Preparation_combined_table.R**: R script used to: 
+i) filter the OTU tables form each marker (12S,18S,COI) from OTUs not assigned to marine Metazoan, 
+ii) rarefy to the minimum number of reads per sample, 
+iii) combine the OTUs tables of the three markers (12S,18S,COI) into one non-redundant taxonomic dataset, 
+iv) remove all OTUs not assigned down to species level finally generating the "Species_occurrence_table" 
 
-**Diversity_analyses.R**: R script reporting all the statistical analyses performed in the study, as well as the script to generate plots reported in the main text and in the supplementary material
+**02_02_NIS_classification_Anis-E_1.0._2026**: R script used to classify the species included in the "Species_occurrence_table" into the categories: Native (NATS), NIS-MED, NIS-EU, Cryptogenic and Uncertain. 
+
+**03_Diversity_analyses.R**: R script reporting all the statistical analyses performed in the study, as well as the script to generate plots reported in the main text and in the supplementary material.
 
 **Metadata.csv**: Metadata used in the study, sampling location, date and type of habitat (Port and Natural) for each sample.
 
