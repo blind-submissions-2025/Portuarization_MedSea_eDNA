@@ -1472,5 +1472,5 @@ combined_taxa_ps_summer.sp<-phyloseq(otu_table(otu.new,taxa_are_rows = TRUE),
                                      tax_table(tax.new),taxa_names(names),
                                      sample_data(sample_data(combined_taxa_ps_summer.sp)))
 
-# save(combined_taxa_ps_summer.sp,file="ps_538_species_summer2021.RData")
+# save(combined_taxa_ps_summer.sp,file="ps_536_species.RData")
 
