@@ -1,5 +1,4 @@
-Files and codes used to generate the results reported in the manuscript "_High species richness, non-indigenous species
-hotspots, and biotic homogenization provide ecological support for the portuarization syndrome_" 
+Files and codes used to generate the results reported in the manuscript "_Environmental DNA reveals biotic homogenization alongside elevated native and non-native species richness in marinas, supporting an ecological portuarization syndrome_" 
 
 **01_Preparation_combined_table.R**: R script used to: 
 i) filter the OTU tables form each marker (12S,18S,COI) from OTUs not assigned to marine Metazoan, 
