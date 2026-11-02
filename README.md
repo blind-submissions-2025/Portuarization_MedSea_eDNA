@@ -16,4 +16,4 @@ iv) remove all OTUs not assigned down to species level finally generating the "S
 
 **ps_536_species.R** : phyloseq object used in the analyses, including taxonomic table, species table with presence and absence and metadata; it is possible to download this and run it in the "Diversity_analyses.R" script. The taxonomy table and the species occurrence tables were used to generate the Species_occurrence_tables reported in the Appendix S.2 Table S1.
 
-**Appendix S.2 Table S1-Species_Occurrence_Table.xlsx**: Table S1 form the Appendix_S2, stored here to improve readu¡ibility during the peer review process.
+**Species_Occurrence_Table.xlsx**: Table S1 form the Appendix_S2, stored here to improve readu¡ibility during the peer review process.
