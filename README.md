@@ -16,4 +16,4 @@ iv) remove all OTUs not assigned down to species level finally generating the "S
 
 **ps_536_species.R** : phyloseq object used in the analyses, including taxonomic table, species table with presence and absence and metadata; it is possible to download this and run it in the "Diversity_analyses.R" script. The taxonomy table and the species occurrence tables were used to generate the Species_occurrence_tables.
 
-**Species_Occurrence_Table.xlsx**: Table S1 form the Appendix_S2, stored here to improve readu¡ibility during the peer review process.
+**Species_Occurrence_Table.xlsx**: Table including the taxonomic lineage of each species identified by the three markers combined, their occurrences (1,0) in each sampling site, their classification as NIS, NATS or Uncertain, and their classification for the different functional traits. The references used to assign the NIS/NATS/Uncertain classification are also reported in this table. 
